@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+/* Hide all slides by default */
+.slide {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+/* Only show the active slide */
+.slide.active {
+  display: block;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clickable Area */
+.click-zone {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  z-index: 10;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+#playBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  border: 2px solid #444;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  font-family: sans-serif;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+  transition: background 0.3s ease;
+}
+
+#playBtn:hover {
+  background: #444;
+}
