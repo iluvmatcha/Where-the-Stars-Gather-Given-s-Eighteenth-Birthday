@@ -29,7 +29,6 @@ img {
   display: block;
   cursor: pointer;
   z-index: 10;
-  background-color: rgba(255, 0, 0, 0.4);
 }
 
 #playBtn {
