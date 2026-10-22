@@ -1,19 +1,29 @@
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100%;
   background-color: #000;
+  overflow-x: hidden;
 }
 
-/* Hide all slides by default */
 .slide {
   display: none;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
-/* Only show the active slide */
 .slide.active {
   display: block;
+}
+
+picture {
+  display: block;
+  width: 100%;
 }
 
 img {
@@ -21,14 +31,40 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
-/* Clickable Area */
 .click-zone {
   position: absolute;
   display: block;
   cursor: pointer;
-  z-index: 10;
+  z-index: 999;
+  /* background-color: rgba(255, 0, 0, 0.45); */
+  touch-action: manipulation;
+}
+
+.zone-1 { top: 67%; left: 33%; width: 34%; height: 9%; }
+.zone-2 { top: 60%; left: 40%; width: 20%; height: 7%; }
+.zone-3 { top: 88%; left: 38%; width: 24%; height: 7%; }
+.zone-4-map { top: 52%; left: 40%; width: 20%; height: 5%; }
+.zone-4-next { top: 88%; left: 38%; width: 24%; height: 7%; }
+.zone-5 { top: 88%; left: 38%; width: 24%; height: 7%; }
+.zone-6 { top: 88%; left: 38%; width: 24%; height: 7%; }
+.zone-7 { top: 88%; left: 36%; width: 28%; height: 7%; }
+.zone-8 { top: 36%; left: 42%; width: 16%; height: 7%; }
+
+@media (max-width: 768px) {
+  .zone-1 { top: 62%; left: 20%; width: 60%; height: 9%; }
+  .zone-2 { top: 55%; left: 25%; width: 50%; height: 7%; }
+  .zone-3 { top: 86%; left: 25%; width: 50%; height: 7%; }
+  .zone-4-map { top: 50%; left: 25%; width: 50%; height: 6%; }
+  .zone-4-next { top: 86%; left: 25%; width: 50%; height: 7%; }
+  .zone-5 { top: 86%; left: 25%; width: 50%; height: 7%; }
+  .zone-6 { top: 86%; left: 25%; width: 50%; height: 7%; }
+  .zone-7 { top: 86%; left: 25%; width: 50%; height: 7%; }
+  .zone-8 { top: 35%; left: 25%; width: 50%; height: 7%; }
 }
 
 #playBtn {
